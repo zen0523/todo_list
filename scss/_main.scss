@@ -1,0 +1,220 @@
+@mixin block_style {
+    background: #FFFFFF;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    @content;
+}
+
+body {
+    min-width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+.mr-4px {
+    margin-right: 4px;
+}
+
+.background {
+    background-image: linear-gradient(174deg, #FFD370 2%, #FFD370 46%, #FFFFFF 46%, #FFFFFF 100%, #E8E8E8 100%);
+    background-size: 100% 150%;
+    padding-top: 48px;
+    padding-bottom: 92px;
+}
+
+.todo_title {
+    width: 500px;
+
+    .title {
+        color: #333333;
+        font-family: 'Baloo Tamma 2', cursive;
+        font-size: 48px;
+        letter-spacing: 8.75px;
+        line-height: 82px;
+    }
+}
+
+.input-todo {
+    width: 500px;
+    height: 48px;
+    @include block_style;
+
+    .text-todo {
+        width: 100%;
+        border: 0px;
+        font-size: 16px;
+        padding: 12px 0px 12px 24px;
+        letter-spacing: 0.7px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #9F9A91;
+        }
+    }
+
+    .text-button {
+        width: 46px;
+        // height: 40px;
+        background-color: #333333;
+        color: white;
+        border-radius: 10px;
+        margin: 4px;
+        font-size: 32px;
+        line-height: 36px;
+        text-align: center;
+    }
+}
+
+.todo-list {
+    margin-top: 8px;
+    width: 500px;
+    @include block_style;
+
+    li.nav-item {
+        font-size: 14px;
+        width: 100%;
+        border-bottom: 2px solid #EFEFEF;
+
+        a {
+            padding: 16px;
+        }
+
+        &.active {
+            border-bottom: 2px solid #333333;
+
+            a {
+                color: #333333;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .list-body {
+        margin-bottom: 0px;
+    }
+
+    .list-item {
+        font-size: 16px;
+        height: 56px;
+        line-height: 56px;
+        padding-left: 12px;
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            margin: 18px 0;
+            border: 1px solid #333333;
+            border-radius: 5px;
+
+            &.checked {
+                background-color: white;
+                color: #FFD370;
+                border: 0px;
+                margin: 0px;
+                font-size: 18px;
+            }
+        }
+
+        .list-content {
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid #EFEFEF;
+
+            &.text-decoration {
+                text-decoration: line-through;
+                color: rgba(51, 51, 51, 0.30);
+            }
+        }
+
+        .list-delete {
+            height: 16px;
+            margin: 20px 0;
+            background-size: contain;
+            background-image: url(../images/cancel.jpg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    .list-footer {
+        padding-right: 47px;
+        font-size: 14px;
+        color: #333333;
+        letter-spacing: 0.7px;
+
+        .wait_todo {
+            margin: 24px;
+        }
+
+        .clear_todo_finished {
+            margin-top: 24px;
+            color: #9F9A91;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .background {
+        padding-top: 16px;
+        padding-bottom: 28px;
+    }
+
+    .todo_title,
+    .input-todo,
+    .todo-list {
+        width: 351px;
+    }
+
+    .todo_title {
+        .title {
+            font-size: 32px;
+            margin-bottom: 2px;
+            line-height: 56px;
+        }
+    }
+
+    .input-todo {
+        margin-top:0;
+    }
+
+    .todo-list {
+        .list-item {
+            padding-left: 0px;
+
+            .col-1 {
+                margin: 0px 16px;
+                padding: 0;
+            }
+
+            .col {
+                padding: 0;
+            }
+
+            .col-1.mr-4px {
+                margin: 0 18px 0px 0px;
+                padding: 0;
+                line-height: 56px;
+
+                .list-delete {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    background-position: center right;
+                    background-image: url(../images/cancel12x12.jpg);
+                    background-size: 12px 12px;
+                    border-bottom: 1px solid #EFEFEF;
+                }
+            }
+        }
+
+        .list-footer {
+            padding-right: 16px;
+            .wait_todo {
+                margin: 24px 24px 24px 16px;
+            }
+        }
+    }
+}
