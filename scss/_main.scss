@@ -58,7 +58,6 @@ body {
 
     .text-button {
         width: 46px;
-        // height: 40px;
         background-color: #333333;
         color: white;
         border-radius: 10px;
@@ -66,6 +65,7 @@ body {
         font-size: 32px;
         line-height: 36px;
         text-align: center;
+        cursor: pointer;
     }
 }
 
@@ -123,7 +123,7 @@ body {
             display: block;
             text-align: left;
             border-bottom: 1px solid #EFEFEF;
-
+            word-wrap: break-word;
             &.text-decoration {
                 text-decoration: line-through;
                 color: rgba(51, 51, 51, 0.30);
