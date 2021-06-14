@@ -27,59 +27,23 @@
                 <div class="text-button" id="addon-wrapping">+</div>
             </div>
         </div>
-        <div class="todo-list container p-0">
+        <div class="todo-list container p-0 invisible">
             <ul class="list-header nav justify-content-center flex-nowrap text-center">
-                <li class="nav-item active">
+                <li class="nav-item active" id="all">
                     <a class="nav-link" href="#">全部</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="todo">
                     <a class="nav-link" href="#">待完成</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="finished">
                     <a class="nav-link" href="#">已完成</a>
                 </li>
             </ul>
             <ul class="list-body d-flex flex-column p-0">
-                <li class="list-item row justify-content-center m-0">
-                    <div class="col-1">
-                        <div class="checkbox"></div>
-                    </div>
-                    <div class="col">
-                        <label class="list-content">把冰箱發霉的檸檬拿去丟</label>
-                    </div>
-                    <div class="col-1 mr-4px">
-                        <div class="list-delete d-none"></div>
-                    </div>
-                </li>
-                <li class="list-item row justify-content-center m-0">
-                    <div class="col-1">
-                        <div class="checkbox checked">✔</div>
-                    </div>
-                    <div class="col">
-                        <label class="list-content text-decoration">打電話叫媽媽匯款給我</label>
-                        <!-- <div class="col-1 mr-4px">
-                            <div class="list-delete"></div>
-                        </div> -->
-                    </div>
-                    <div class="col-1 mr-4px">
-                        <div class="list-delete d-none"></div>
-                    </div>
-                </li>
-                <li class="list-item row justify-content-center m-0">
-                    <div class="col-1">
-                        <div class="checkbox"></div>
-                    </div>
-                    <div class="col">
-                        <label class="list-content">整理電腦資料夾</label>
-                    </div>
-                    <div class="col-1 mr-4px">
-                        <div class="list-delete d-none"></div>
-                    </div>
-                </li>
             </ul>
             <div class="list-footer d-flex justify-content-between">
-                <div class="wait_todo">5 個待完成項目</div>
-                <div class="clear_todo_finished">清除已完成項目</div>
+                <div class="wait_todo"><span>0</span> 個待完成項目</div>
+                <a class="clear_todo_finished" href="#">清除已完成項目</a>
             </div>
         </div>
     </div>
